@@ -1,0 +1,26 @@
+.hero
+    background-image: url(/img/hero-bg.jpg)
+    background-color: $white
+    background-repeat: no-repeat
+    background-position: center
+    color: $white
+    &-wrapper
+        padding: 220px 20px
+        &__title
+            font-size: 96px
+            margin: 0
+            margin-bottom: 44px
+        &__button
+            align-items: center
+            text-decoration: none
+            color: $white
+            &:hover
+                background-color: $white
+                color: $black
+                &::after
+                    content: url('/img/arrow-black.svg')
+            &::after
+                content: url('/img/arrow-white.svg')
+                margin-left: 8px
+                width: 24px
+                height: 24px
