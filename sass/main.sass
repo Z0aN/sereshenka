@@ -1,11 +1,24 @@
 @import "header"
 @import "variables"
 @import "hero"
+@import "portfolio"
+@import "prices"
 
 *
     margin: 0
     padding: 0
+    box-sizing: border-box
 
+html
+    scroll-behavior: smooth
+    &::-webkit-scrollbar
+        width: 5px
+        background-color: $light-black
+        border-radius: 5px
+        height: 100px
+    &::-webkit-scrollbar-thumb
+        background: $black
+        border-radius: 5px
 .container
     max-width: 1110px
     margin: 0 auto
@@ -20,3 +33,12 @@
     font-style: normal
     font-weight: 400
     font-size: 16px
+
+.title
+    font-size: 40px
+
+.subtitle
+    font-family: "Poppins", sans-serif
+    color: $light-black
+    font-weight: 600
+    font-size: 14px
