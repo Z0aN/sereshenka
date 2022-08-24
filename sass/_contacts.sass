@@ -6,6 +6,49 @@
         flex-direction: column
         text-align: left
         margin-bottom: 40px
+    &-wrapper
+        display: flex
+    &-info
+        position: relative
+        display: block
+        margin: auto
+        text-decoration: none
+        list-style: none
+        &::after
+            content: ""
+            position: absolute
+            left: -20%
+            top: -20%
+            background-color: $dark-blue
+            width: 700%
+            height: 135%
+            z-index: -1
+        &__item
+            padding-left: 20px
+            margin-bottom: 15px
+            position: relative
+            transition: all .75s cubic-bezier(.075, .5, 0, 1)
+            overflow: hidden
+            &::before
+                content: ""
+                position: absolute
+                transform: translateX(-300%)
+                top: 50%
+                height: 1px
+                width: 30%
+                background-color: $black
+                transition: all .75s cubic-bezier(.075, .5, 0, 1)
+            &:hover
+                transform: translateX(10%)
+                overflow: visible
+                &::before
+                    transform: translateX(-130%)
+        &__link
+            display: block
+            width: 100%
+            font-size: 16px
+            text-decoration: none
+            color: $black
     &-form
         display: flex
         flex-wrap: wrap
@@ -50,12 +93,13 @@
                 height: 100%
                 left: -100%
                 top: 0
-                transition: all .2s
+                transition: all .2s ease
                 z-index: -1
             &:hover
                 color: $white
                 &::after
                     left: 0
+
 .input
     &-block
         width: 45%
