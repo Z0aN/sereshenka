@@ -1,18 +1,28 @@
 
 .header
     position: fixed
-    background-color: $white
+    z-index: 100
     width: 100%
-    z-index: 99
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        background-color: $white
+        width: 100%
+        height: 100%
+        z-index: 101
     &__logo
         margin: 0
         font-size: 24px
         font-weight: bold
         padding: 0
+        z-index: 102
     &-nav
         display: flex
         margin: 0 /* Отступ слева в браузере IE и Opera */
         padding: 0 /* Отступ слева в браузере Firefox, Safari, Chrome */
+        z-index: 103
         &__item
             position: relative
             font-family: Montserrat, sans-serif
@@ -55,5 +65,78 @@
         justify-content: space-between
         align-items: center
         padding: 15px 0
+    &__burger
+        display: none
+        position: relative
+        width: 30px
+        height: 20px
+        z-index: 101
+        transition: all .3s ease 0s
+        & span
+            background-color: $black
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            position: absolute
+            width: 100%
+            height: 2px
+            transition: all .3s ease 0s
+        &::before, &::after
+            content: ""
+            background-color: $black
+            left: 0
+            position: absolute
+            width: 100%
+            height: 2px
+            transition: all .3s ease 0s
+        &::before
+            top: 0
+        &::after
+            bottom: 0
+        &.active
+            &::before
+                top: 9px
+                // transform: translateY(50%)
+                transform: rotate(45deg)
+            &::after
+                bottom: 9px
+                // transform: translateY(-50%)
+                transform: rotate(-45deg)
+            & span
+                visibility: 0
+                opacity: 0
 
-    
+
+@media (max-width: 1200px)
+    .header
+        padding: 15px 20px
+        &__burger
+            display: block
+        &-nav
+            position: fixed
+            flex-direction: column
+            top: -100%
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 100
+            transition: all .3s ease 0s
+            background-color: $dark-blue
+            padding: 120px 70px
+            &.active
+                top: 0
+            &__item
+                margin-right: 0
+                margin-bottom: 40px
+                font-size: 20px
+                &::after
+                    content: none
+                &:hover:after
+                    content: none
+
+@media (max-width: 576px)
+    .header
+        &__logo
+            font-size: 20px
+        &-nav
+            padding: 120px 40px

@@ -1,4 +1,5 @@
 .modal
+    overflow-y: auto
     font-family: Montserrat, sans-serif
     &__overlay
         position: fixed
@@ -20,6 +21,8 @@
         top: 50%
         left: 50%
         max-width: 700px
+        height: fit-content
+        // height: 80% Фикс вертикального скролла
         padding: 30px 50px
         background-color: $dark-blue
         transform: translate(-50%, -50%)
@@ -31,6 +34,7 @@
         transition: all .2s
         &.active
             visibility: visible
+            overflow-y: auto
             opacity: 1
             transition: all .2s
     &__close
@@ -38,8 +42,12 @@
         right: 30px
         top: 10px
         font-size: 20px
+        font-weight: 600
         text-decoration: none
         color: $black
+        transition: scale .1s
+        &:active
+            scale: .7
     &-content
         &__photo
             overflow: hidden

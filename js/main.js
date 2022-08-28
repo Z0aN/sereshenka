@@ -66,4 +66,15 @@ $(document).ready(function(){
         // }
     }
 
+    $('.header__burger').click(function(event){
+        $('.header__burger,.header-nav').toggleClass('active');
+        $('body').toggleClass('lock');
+    })
+
+    const headerLinks = document.querySelectorAll('.header-nav__item')
+    headerLinks.forEach((el) => {
+        el.addEventListener('click', () => {
+            $('.header__burger,.header-nav').toggleClass('active');
+        })
+    })
 });
