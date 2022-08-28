@@ -38,7 +38,14 @@ $(document).ready(function(){
     closeModalButton.on('click', closeModal);
     modalOverlay.on('click',closeModal);
     // Закрытие на Esc
-    $(document).on("keydown", closeModal);
+    $(document).on("keydown", function (event) {
+        var modalOverlay = $(".modal__overlay");
+        var modalDialog = $(".modal__dialog");
+        if (event.keyCode == 27) {
+          modalOverlay.removeClass("active");
+          modalDialog.removeClass("active");
+        }
+      });
 
     function openModal() {
         let targetModal = $(this).attr('data-href');
@@ -53,10 +60,10 @@ $(document).ready(function(){
         modalOverlay.removeClass('active');
         modalDialog.removeClass('active');
 
-        if(e.keyCode == 27) {
-            modalOverlay.removeClass('active');
-            modalDialog.removeClass('active');
-        }
+        // if(e.keyCode == 27) {
+        //     modalOverlay.removeClass('active');
+        //     modalDialog.removeClass('active');
+        // }
     }
 
 });
