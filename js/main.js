@@ -27,4 +27,36 @@ $(document).ready(function(){
     this.style.height = "auto";
     this.style.height = (this.scrollHeight) + "px";
     }
+
+
+
+    let modalButton = $('[data-toggle=modal]'),
+        closeModalButton = $('.modal__close'),
+        modalOverlay = $('.modal__overlay')
+
+    modalButton.on('click', openModal);
+    closeModalButton.on('click', closeModal);
+    modalOverlay.on('click',closeModal);
+    // Закрытие на Esc
+    $(document).on("keydown", closeModal);
+
+    function openModal() {
+        let targetModal = $(this).attr('data-href');
+        $(targetModal).find('.modal__overlay').addClass('active');
+        $(targetModal).find('.modal__dialog').addClass('active');
+    }
+
+    function closeModal(e) {
+        e.preventDefault()
+        let modalOverlay = $('.modal__overlay');
+        let modalDialog = $('.modal__dialog');
+        modalOverlay.removeClass('active');
+        modalDialog.removeClass('active');
+
+        if(e.keyCode == 27) {
+            modalOverlay.removeClass('active');
+            modalDialog.removeClass('active');
+        }
+    }
+
 });

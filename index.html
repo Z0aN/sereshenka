@@ -7,11 +7,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="css/normalize.css?v=001">
     <link rel="stylesheet" href="css/main.min.css?v=001">
     <title>Сергей Андрианов</title>
 </head>
 <body>
+    <div class="modal" id="one">
+        <div class="modal__overlay"></div>
+        <div class="modal__dialog">
+            <a href="#" class="modal__close">x</a>
+            <div class="modal-content">
+                <div class="modal-content__photo">
+                    <img src="img/slide-item-3.jpg" alt="Photo" class="modal-content__photo--img">
+                </div>
+                <h3 class="modal-content__title">Рекламный ролик</h3>
+                <p class="modal-content__text">С помощью рекламного  формируют яркий запоминающийся образ своего продукта или услуги в глазах потребителя, подробно освещают его положительные качества, подчеркивают его преимущества над аналогичными предложениями конкурентов, расширяют пул лояльных клиентов и, конечно, увеличивают продажи своего продукта или услуги.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="two">
+        <div class="modal__overlay"></div>
+        <div class="modal__dialog">
+            <a href="#" class="modal__close">x</a>
+            <div class="modal-content">
+                <div class="modal-content__photo">
+                    <img src="img/slide-item-2.jpg" alt="Photo" class="modal-content__photo--img">
+                </div>
+                <h3 class="modal-content__title">Рекламный ролик</h3>
+                <p class="modal-content__text">С помощью рекламного  формируют яркий запоминающийся образ своего продукта или услуги в глазах потребителя, подробно освещают его положительные качества, подчеркивают его преимущества над аналогичными предложениями конкурентов, расширяют пул лояльных клиентов и, конечно, увеличивают продажи своего продукта или услуги.</p>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -83,7 +114,7 @@
                         <h4 class="slide-text__title">Рекламный ролик</h4>
                         <hr class="slide-text__line">
                         <p class="slide-text__subtitle">Это короткое видео, призванное наилучшим образом презентовать определенный продукт или услугу и повысить продажи.</p>
-                        <button class="button slide-text__button">Подробнее</button>
+                        <button data-toggle="modal" data-href="#one" class="button slide-text__button">Подробнее</button>
                     </div>
                 </div>
 
@@ -93,11 +124,11 @@
                         <h4 class="slide-text__title">Музыкальный видео клип</h4>
                         <hr class="slide-text__line">
                         <p class="slide-text__subtitle">В музыкальном мире мощное продвижение так же важно, как и создание песен.</p>
-                        <button class="button slide-text__button">Подробнее</button>
+                        <button data-toggle="modal" data-href="#two" class="button slide-text__button">Подробнее</button>
                     </div>
                 </div>
 
-                <div class="slide" style="min-width: 0">
+                <div class="slide">
                     <div class="slide__img"><img src="img/slide-item.jpg" alt=""></div>
                     <div class="slide-text">
                         <h4 class="slide-text__title">Музыкальный видео клип</h4>
