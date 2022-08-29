@@ -1,4 +1,5 @@
 .hero
+    margin-top: 100px
     background-image: url('../img/hero-bg.jpg')
     background-attachment: fixed
     background-color: $white
@@ -35,3 +36,11 @@
                 height: 24px
                 transition-property: all
                 transition-duration: .2s
+
+@media ( max-width: 992px )
+    .hero
+        &-wrapper
+            padding: 120px 20px
+            &__title
+                font-size: 82px
+                margin-bottom: 30px
