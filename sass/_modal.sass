@@ -8,7 +8,7 @@
         right: 0
         bottom: 0
         background-color: rgba(0, 0, 0, 0.8)
-        z-index: 100
+        z-index: 199
         visibility: hidden
         opacity: 0
         transition: all .2s
@@ -28,7 +28,7 @@
         transform: translate(-50%, -50%)
         color: $black
         border-radius: 10px
-        z-index: 101
+        z-index: 200
         visibility: hidden
         opacity: 0
         transition: all .2s
@@ -59,3 +59,8 @@
             font-family: Playfair Display, sans-serif
             font-size: 28px
             margin-bottom: 10px
+
+@media (max-width: 992px)
+    .modal
+        &__dialog
+            width: 70%

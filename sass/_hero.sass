@@ -1,5 +1,5 @@
 .hero
-    margin-top: 100px
+    margin-top: 40px
     background-image: url('../img/hero-bg.jpg')
     background-attachment: fixed
     background-color: $white
@@ -37,10 +37,41 @@
                 transition-property: all
                 transition-duration: .2s
 
+@media ( max-width: 1200px )
+    .hero
+        background-size: 120vw
 @media ( max-width: 992px )
     .hero
+        background-size: 180vw
+        background-position: left
         &-wrapper
             padding: 120px 20px
             &__title
                 font-size: 82px
                 margin-bottom: 30px
+            &__button
+                &:hover
+                    background-color: transparent
+                    color: $white
+                    &::after
+                        content: url('../img/arrow-white.svg')
+@media (max-width: 768px)
+    .hero
+        background-size: 220vw
+        &-wrapper
+            &__title
+                font-size: 60px
+@media (max-width: 580px)
+    .hero
+        background-size: 260vw 90vh
+
+@media (max-width: 480px)
+    .hero
+        background-position-x: -100px
+        background-size: 330vw 90vh
+        &-wrapper
+            &__title
+                font-size: 38px
+            &__button
+                padding: 10px
+                font-size: 14px

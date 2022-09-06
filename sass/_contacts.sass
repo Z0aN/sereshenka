@@ -123,4 +123,23 @@
     .contacts
         &-wrapper
             padding: 20px
+
+@media ( max-width: 768px )
+    .contacts
+        &-wrapper
+            flex-direction: column
+        &-form
+            margin-bottom: 40px
+        &-info
+            margin: 0
+@media ( max-width: 480px )
+    .contacts
+        &-form
+            flex-direction: column
+    .input
+        &-block
+            width: 100%
+    .textarea
+        &-block
+            margin-bottom: 30px
     

@@ -94,3 +94,54 @@
                 top: 0
         &-header
             align-items: flex-start
+
+@media (max-width: 992px)
+    .about
+        &-form
+            top: -3%
+            right: 25%
+@media ( max-width: 768px )
+    .about
+        height: 600px
+        padding-top: 30px
+        &>.container
+            overflow: visible
+        &-image
+            // display: none
+            align-self: end
+            top: -370px
+        &__text
+            max-width: 310px
+        &-wrapper
+            top: 0
+            &::after
+                height: 390px
+                width: 72%
+        &-form
+            top: 50%
+            right: 5%
+@media ( max-width: 580px )
+    .about
+        &__text
+            max-width: 240px
+        &-image
+            top: -480px
+            width: 230px
+            height: 390px
+        &-form
+            top: 40%
+@media ( max-width: 480px )
+    .about
+        height: 100%
+        &-image
+            top: 0
+            align-self: start
+        &-form
+            top: 85%
+        &-wrapper
+            &::after
+                width: 100%
+        &__text
+            margin-right: 0
+            max-width: 100%
+            margin-bottom: 30px

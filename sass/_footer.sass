@@ -40,3 +40,25 @@
     .footer
         &-wrapper
             padding: 0 20px
+
+@media ( max-width: 768px )
+    .footer
+        &__logo
+            margin-right: 0
+        &-text
+            left: auto
+            right: -60px
+        &-header
+            padding: 0
+            padding-left: 20px
+@media ( max-width: 480px )
+    .footer
+        &-wrapper
+            flex-direction: column
+        &-text
+            position: relative
+            right: 0
+            left: 35%
+            transform: translateX(-50%)
+        &-header
+            padding: 0 20px
