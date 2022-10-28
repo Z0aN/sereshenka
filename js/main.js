@@ -1,14 +1,33 @@
 $(document).ready(function(){
+
     $('.prices-slider').slick({
         arrows:false,
-        adaptiveHeight: true,
         slidesToShow : 3,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         autoplay: true,
-        centerMode: true,
         autoplaySpeed: 2000,
         draggable: true,
         swipe: true,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow : 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow : 2,
+                },
+            },
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow : 1,
+                }
+            }
+        ]
     });
 
     const txHeight = 30;
@@ -53,17 +72,16 @@ $(document).ready(function(){
         $(targetModal).find('.modal__dialog').addClass('active');
     }
 
+    $("[data-iframe]").click(function () {
+        $(this).html($(this).attr("data-iframe"));
+    });
+
     function closeModal(e) {
         e.preventDefault()
         let modalOverlay = $('.modal__overlay');
         let modalDialog = $('.modal__dialog');
         modalOverlay.removeClass('active');
         modalDialog.removeClass('active');
-
-        // if(e.keyCode == 27) {
-        //     modalOverlay.removeClass('active');
-        //     modalDialog.removeClass('active');
-        // }
     }
 
     $('.header__burger').click(function(event){
